@@ -13,6 +13,12 @@
 body {
   font-family: 'Lato', sans-serif;
   margin: 0;
+  transition: transform 0.3s ease; //styling for when menu is toggles and in JS show-nav class is added
+}
+
+body.show-nav {
+  /* Width of nav */
+  transform: translateX(200px); //corresponds to when show-nav is added menu pops out on X axis, must be same 200px as width of nav seen below
 }
 
 nav{
@@ -129,7 +135,7 @@ button:focus {
 
 .modal-container {
   background-color: rgba(0, 0, 0, 0.6);
-  // display: none;
+  display: none;
   position: fixed; //covers entire page
   top: 0; //every direction is set to 0 so it convers entire page
   left: 0;
@@ -137,6 +143,7 @@ button:focus {
   bottom: 0;
 }
 
+//styling for when sign up btn pressed and modal displays
 .modal-container.show-modal {
   display: block;
 }
@@ -152,8 +159,8 @@ button:focus {
   transform: translate(-50%, -50%); //sets modal directly in the middle
   max-width: 100%;
   width: 400px;
-  animation-name: modalopen;
-  animation-duration: var(--modal-duration);
+  animation-name: modalopen; //when sign up pressed modal fades in
+  animation-duration: var(--modal-duration); //look at :root and key frames need to create one for modal open animation
 }
 
 .modal-header {
@@ -197,10 +204,10 @@ button:focus {
 
 @keyframes modalopen {
   from {
-    opacity: 0;
+    opacity: 0; //when starts want opacity to be zero, invisible to...
   }
 
   to {
-    opacity: 1;
+    opacity: 1; //when ends opacity to be one, visible in 1s
   }
 }
